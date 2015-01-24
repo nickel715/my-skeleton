@@ -1,0 +1,34 @@
+{
+    "name": "nickel715/my-skeleton",
+    "description": "{$description}",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Hohm",
+            "email": "nickel7152@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.4.*",
+        "satooshi/php-coveralls": "0.6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "{$vendorNamespace}\\": "src/",
+            "MySkeleton\\": ""
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "MySkeleton\\ScriptHandler::collectGenerellInformations",
+            "MySkeleton\\ScriptHandler::generateComposerJson",
+            "MySkeleton\\ScriptHandler::generateTravis",
+            "MySkeleton\\ScriptHandler::generateReadme",
+            "MySkeleton\\ScriptHandler::cleanup"
+        ]
+    }
+}
